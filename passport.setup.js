@@ -9,7 +9,7 @@ module.exports = function (passport) {
 	// when a new user logs in, attach them
 	// to the session
 	passport.serializeUser(function (user, done) {
-		// but only bother attaching the _id, no the whoe user
+		// but only bother attaching the _id, no the whole user
 		done(null, user._id);
 	});
 	// each time a request comes in, use the _id from the session

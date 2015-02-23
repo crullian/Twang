@@ -21,9 +21,10 @@ function isAuthenticated (req, res, next) {
 }
 
 router.get('/', function (req, res) {
-	// only authenticated users get to witness the coolest
-	if (req.user) res.sendFile(__dirname + '/theCoolest.html');
-	else res.send('i am (g)root');
+	// only authenticated users get to witness the coolest req.user, if user is authenticated
+	if (req.user) res.sendFile(__dirname + '/index.html');
+	// dirname start with the file you are in
+	else res.sendFile(__dirname + '/login.html');
 });
 
 // because `isAuthenticated` sits just before our handler
@@ -33,7 +34,8 @@ router.get('/tweets', isAuthenticated, function (req, res, next) {
 	// using our user-specific twitter client
 	// get the tweets of the specified handle (should be placed in the query string)
 	req.user.client.get('statuses/user_timeline', {
-		screen_name: handle
+		screen_name: handle,
+		count: 50
 	}, function (err, tweets) {
 		if (err) return next(err);
 		var leanTweets = tweets.map(function (tweet) {

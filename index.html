@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TWANG!</title>
+    <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="fsa-count-words.js"></script>
+    <script src="app.js"></script>
+    <script src="directives/tweet.js"></script>
+  </head>
+  <body ng-app="Twang">
+    <h1>TWANG!</h1>
+
+    <div ng-controller="GetTweetsController">
+      <form name="findTweetsForm"  ng-submit="getTweets(search.handle)">
+        Find by Twitter Handle: <input type="text" placeholder="enter handle" ng-model="search.handle"/>
+        <button type="submit">Search</button>
+      </form>
+      
+      <button ng-click="analyzeTweets(tweets)" ng-show="tweets">Analyze Tweets</button>
+      <div ng-repeat="analyzedWord in analyzedWords | orderBy:'count':true">
+        <h4>{{ analyzedWord.word }}</h4>
+        <h5>{{ analyzedWord.count }}</h5>
+      </div>
+      <tweet the-tweet="tweet" ng-repeat="tweet in tweets"></tweet>
+
+    </div>
+   <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+  </body>
+</html>

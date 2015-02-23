@@ -7,7 +7,7 @@ var express = require('express'),
 	passport = require('./passport.setup')(require('passport'));
 
 var app = express();
-
+app.use(express.static(__dirname + '/public'));
 // standard loggign and body parsing
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -28,6 +28,8 @@ app.use(passport.initialize());
 // passport manages its own sessions by piggybacking off of
 // the existing req.session that express-session makes
 app.use(passport.session());
+
+
 
 // our custom routes---the behavior of our app
 app.use(require('./routes'));
