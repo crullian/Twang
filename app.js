@@ -8,6 +8,7 @@ var express = require('express'),
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 // standard loggign and body parsing
 app.use(logger('dev'));
 app.use(bodyParser.json());

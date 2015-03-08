@@ -2,3 +2,68 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: ;
+}
+video {
+  display: block;
+  margin: 6% auto;
+}
+
+.top {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.login {
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #5D5E5E;
+}
+
+img {
+  float: left;
+  height: 70px;
+  width: 70px; 
+}
+
+.navbar-default {
+  height: 70px;
+}
+
+.navbar-brand {
+  font-size: 108px;
+  padding-top: 23px;
+}
+
+.navbar-right {
+  padding-top: 14px;
+}
+
+.ex {
+  color: magenta;
+  /*transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);*/
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(720deg);
+  }
+}
+.ex:hover
+{
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         0.5s; 
+    -webkit-animation-iteration-count:  once;
+    -webkit-transition-timing-function: linear;
+    }
+
+a {
+  color: #a8a8a8;
+}

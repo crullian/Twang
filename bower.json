@@ -1,0 +1,22 @@
+{
+  "name": "Twang!",
+  "version": "0.1.0",
+  "homepage": "",
+  "authors": [
+    "crullian <crullian@gmail.com>"
+  ],
+  "description": "Tweet analyzer",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3"
+  }
+}
